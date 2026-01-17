@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSG Gauselmann Ostseetörn 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #0f172a; overflow-x: hidden; }
+        
+        /* Slide Container */
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            border: 1px solid #1e293b;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            page-break-after: always;
+            position: relative;
+        }
+
+        /* Compact Slide Mode */
+        .slide.compact { padding: 2.2rem; }
+        .slide.compact h2 { margin-bottom: 1rem; }
+
+        /* Typography */
+        h1 { font-size: 3.5rem; font-weight: bold; color: #38bdf8; margin-bottom: 1rem; }
+        h2 { font-size: 2.2rem; font-weight: bold; color: #38bdf8; margin-bottom: 1.5rem; border-bottom: 2px solid #1e293b; padding-bottom: 0.5rem; }
+        .small-h2 { font-size: 1.5rem; margin-bottom: 0.5rem; border-bottom: none; padding-bottom: 0; }
+        
+        h3 { font-size: 1.1rem; font-weight: bold; color: #38bdf8; margin-bottom: 0.3rem; margin-top: 0.2rem; }
+        p { font-size: 0.95rem; color: #cbd5e1; margin: 0.2rem 0; }
+        
+        /* Layout Helpers */
+        .title-slide { background-color: #020617; justify-content: center; align-items: center; text-align: center; }
+        .two-col { display: flex; gap: 2rem; flex: 1; overflow: hidden; }
+        .three-col { display: flex; gap: 1.2rem; flex: 1; overflow: hidden; }
+        .col { flex: 1; display: flex; flex-direction: column; }
+        
+        /* Lists */
+        ul { list-style: disc; margin-left: 1.2rem; }
+        li { font-size: 0.9rem; color: #cbd5e1; margin: 0.25rem 0; line-height: 1.3; }
+        .tight li { margin: 0.15rem 0; font-size: 0.85rem; }
+        
+        /* Special Elements */
+        .subtitle { font-size: 1.3rem; color: #cbd5e1; }
+        .meta { font-size: 0.85rem; color: #94a3b8; margin-top: 2rem; }
+        .dark-bg { background-color: #020617; }
+        
+        /* Cards */
+        .cards { display: flex; gap: 1rem; flex: 1; align-items: center; }
+        .card { flex: 1; background-color: #1e293b; padding: 1.5rem; border-radius: 8px; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+        
+        /* Images */
+        img { max-width: 100%; max-height: 350px; object-fit: contain; border-radius: 8px; }
+        .large-img { max-height: 450px; width: auto; max-width: 100%; }
+        
+        /* Price Tags & Deadlines */
+        .price-tag { font-size: 1.5rem; margin-bottom: 0.5rem; color: #f1f5f9; background: #1e293b; padding: 0.8rem; border-radius: 8px; display: inline-block; }
+        .old-price { text-decoration: line-through; color: #94a3b8; margin-right: 0.5rem; font-size: 1.2rem; }
+        .new-price { color: #4ade80; font-weight: bold; font-size: 1.8rem; }
+        .deadline { color: #fbbf24; font-weight: bold; border: 1px solid #fbbf24; padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;}
+        
+        strong { color: #e2e8f0; }
+
+        /* Alert Box */
+        .alert-box {
+            background: rgba(239, 68, 68, 0.15);
+            border-left: 4px solid #ef4444;
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.9rem;
+        }
+        .info-box {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid #38bdf8;
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.85rem;
+        }
+        .alert-box strong { color: #fca5a5; }
+        .info-box strong { color: #7dd3fc; }
+
+        /* Map Placeholder */
+        .map-container {
+            width: 100%;
+            height: 140px; 
+            background-color: #334155;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* NEW Highlight Text */
+        .highlight-text {
+            font-size: 1.5rem;
+            color: #facc15;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed #334155;
+            padding-bottom: 1rem;
+        }
+
+        /* NEW Content Box Style */
+        .content-box {
+            background-color: #1e293b;
+            padding: 1.2rem;
+            border-radius: 8px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-box h3 { margin-top: 0; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; margin-bottom: 0.8rem; }
+        
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<section class="slide title-slide dark-bg">
+    <h1>BSG Gauselmann Ostseetörn 2026</h1>
+    <p class="subtitle">Segeln, Teamgeist und Abenteuer</p>
+    <p class="meta">2026</p>
+</section>
+
+<!-- Slide 2: Nach der Besprechung -->
+<section class="slide">
+    <h2>Nach der Besprechung: Team & Crew Pro Boot</h2>
+    <div class="two-col">
+        <div class="col">
+            <h3>Kennenlernen & Organisation</h3>
+            <ul>
+                <li><strong>Vorstellung & Kennenlernen</strong></li>
+                <li>Persönliche Vorstellung, Erfahrung & Erwartungen</li>
+                <li><strong>Bordkasse & Verwaltung</strong></li>
+                <li>Wer führt die Bordkasse?</li>
+                <li>App nutzen (z.B. Splitwise)</li>
+                <li><i>DK: Fast alles mit Karte, kaum Bargeld nötig</i></li>
+                <li><strong>App & Kommunikation</strong></li>
+                <li>Kommunikations-Apps (WhatsApp etc.)</li>
+                <li>Notfall-Kontakte austauschen</li>
+                <li><strong>Essen & Verpflegung</strong></li>
+                <li>Einkaufsort & Liste pro Boot</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Gesundheit & Sicherheit</h3>
+            <ul>
+                <li><strong>Medizinische Aspekte</strong></li>
+                <li>Krankheiten dem Skipper melden</li>
+                <li>Medikamente & Allergien dem Skipper melden</li>
+                <li>Medikamente bei Seekrankheit besprechen</li>
+                <li><strong>Bordordnung & Sicherheit</strong></li>
+                <li>Bordordnung besprechen</li>
+                <li>Schwimmwesten tragen</li>
+                <li>Verhalten bei Notfällen</li>
+                <li><strong>Bordaufgaben</strong></li>
+                <li>Aufgabenverteilung (Kochen, Deck, etc.)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Leben an Bord (ANGEPASST) -->
+<section class="slide compact">
+    <h2>Leben an Bord & Miteinander</h2>
+    <div class="highlight-text">
+        "Segeln ist wie Camping auf dem Wasser!"
+    </div>
+    
+    <div class="three-col">
+        <!-- Spalte 1: Team & Mindset -->
+        <div class="content-box">
+            <h3 style="color: #4ade80;">Team & Mindset</h3>
+            <ul class="tight">
+                <li><strong>Jeder hilft mit!</strong></li>
+                <li>Teamgeist zählt, keine Einzelkämpfer.</li>
+                <li><strong>Auszeit nehmen (OK!):</strong></li>
+                <li>Bei Lagerkoller: Einfach Bescheid geben & spazieren gehen.</li>
+                <li><strong>Lösungsorientiert & Positiv:</strong></li>
+                <li>Probleme offen ansprechen.</li>
+                <li><strong>Ziel: Jeder soll eine gute Zeit haben!</strong></li>
+            </ul>
+        </div>
+
+        <!-- Spalte 2: Komfort & Regeln -->
+        <div class="content-box">
+            <h3 style="color: #60a5fa;">Komfort & Regeln</h3>
+            <ul class="tight">
+                <li><strong>Sanitär:</strong></li>
+                <li>Hafen: Große Waschhäuser (Komfort)</li>
+                <li>Bord: Kleine Pump-WC (Vorhanden)</li>
+                <li><strong>Klartext an Deck:</strong></li>
+                <li>Bei Manövern: <strong>Keine Diskussion!</strong></li>
+                <li>Skipper hat das Wort (Sicherheit).</li>
+                <li><i>An Land reden wir über alles!</i></li>
+            </ul>
+        </div>
+
+        <!-- Spalte 3: Verpflegung -->
+        <div class="content-box">
+            <h3 style="color: #fbbf24;">Essen & Trinken</h3>
+            <ul class="tight">
+                <li><strong>Strategie:</strong></li>
+                <li>Nicht zu viel einkaufen (Reste vermeiden)!</li>
+                <li><strong>Events:</strong></li>
+                <li>1x Grillen (Salate mitbringen)</li>
+                <li>1x Essen gehen (Abschluss)</li>
+                <li><strong>Frühstück (Option):</strong></li>
+                <li>Jeder bringt seins / oder "Gemeinschaftstopf"</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Crews & Yachten -->
+<section class="slide" style="justify-content: center;">
+    <h2 class="small-h2">Crews & Yachten</h2>
+    <div style="display: flex; justify-content: center; align-items: center; flex: 1; overflow: hidden;">
+        <img src="Segelregatta mit kreativen Teams.png" alt="Crews und Yachten" class="large-img">
+    </div>
+</section>
+
+<!-- Slide 5: Kosten & Finanzen -->
+<section class="slide compact">
+    <h2>Kosten & Finanzen</h2>
+    <div class="two-col" style="align-items: flex-start;">
+        <div class="col">
+            <h3>Törnkosten pro Person</h3>
+            <div class="price-tag">
+                <span class="old-price">380€</span> 
+                <span class="new-price">300€</span>
+            </div>
+            
+            <div class="info-box">
+                <p><strong>Warum so günstig? (Special 2026)</strong></p>
+                <ul class="tight">
+                    <li>Exklusiver Rabatt vom Vercharterer</li>
+                    <li>Sicherheitspuffer: Wir können auch mit weniger Personen fahren</li>
+                    <li><i>Wir planen immer mit Toleranz, um im Zweifel den Preis zu senken (statt nachzufordern)!</i></li>
+                    <li><strong>Achtung:</strong> Keine Garantie für Folgejahre!</li>
+                </ul>
+            </div>
+
+            <p style="margin-bottom: 0.3rem; color: #38bdf8;"><strong>Inklusive:</strong></p>
+            <ul class="tight">
+                <li>Chartergebühr, Service & Endreinigung</li>
+                <li>Frühanreise & Teamevent (Grillen)</li>
+            </ul>
+        </div>
+        <div class="col" style="justify-content: center; align-items: center;">
+             <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/0d7ff06e-8fd1-4f79-91d0-71c00b859227.png" alt="Sparschwein Yacht" style="max-height: 200px; margin-bottom: 1rem;">
+             
+             <div style="width: 100%; background: #1e293b; padding: 1rem; border-radius: 8px;">
+                 <p style="color: #fbbf24; font-weight: bold; margin-bottom: 0.5rem;">Zahlung & Extras:</p>
+                 <ul class="tight">
+                    <li><span class="deadline">Restzahlung bis Ende März!</span></li>
+                    <li>Skipper zahlen den gleichen Preis</li>
+                    <li><strong>Bordkasse (Extra):</strong> Verpflegung, Diesel, Hafen</li>
+                </ul>
+             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Ablauf Anreise -->
+<section class="slide compact">
+    <h2>Ablauf: Anreise & Start</h2>
+    <div class="two-col">
+        <div class="col">
+            <h3 style="color: #4ade80;">Freitag, 26.06.2026</h3>
+            <div class="map-container">
+                 <img src="Screenshot 2026-01-17 141059.png" alt="Karte Hafenspitze Flensburg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <ul class="tight">
+                <li><strong>Anfahrt & Autos:</strong></li>
+                <li>Skipper/Co: BSG-Fahrzeug</li>
+                <li>Crews: Fahrgemeinschaften (1 Auto/Schiff)</li>
+                <li style="margin-top: 0.5rem;"><strong>18:30 Uhr: Treffen Hafenspitze</strong></li>
+                <li><i>Hafendamm 505, 24937 Flensburg</i></li>
+                <li>Kurze Absprache & Fragen klären</li>
+                <li><strong>Optional Einkaufen</strong> (Kühlwaren)</li>
+                <li><strong>Ab 22:00 Uhr: Schiffsübernahme</strong></li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3 style="color: #fbbf24;">Samstag, 27.06.2026</h3>
+            <ul class="tight">
+                <li><strong>08:00 Uhr: Offizielle Übergabe</strong></li>
+                <li>Nur Skipper & Co-Skipper</li>
+                <li>Crew: Waschhaus / Freizeit</li>
+                <li><strong>Vormittags</strong></li>
+                <li>Gemeinsames Frühstück</li>
+                <li>Sicherheitsunterweisung (Skipper)</li>
+                <li><strong>Start</strong></li>
+                <li>Leinen los – Segeltag nutzen!</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Abreise & Abschluss -->
+<section class="slide">
+    <h2>Abreise & Abschluss</h2>
+    <div class="two-col">
+        <div class="col">
+            <h3 style="color: #fbbf24;">Donnerstag, 02.07.2026</h3>
+            <p><strong>Ziel: Gelting oder Sonderborg</strong></p>
+            <ul>
+                <li>Wetterabhängige Planung</li>
+                <li><strong>Gemeinsames Abendessen:</strong></li>
+                <li>Alle zusammen essen gehen (Lokal)</li>
+                <li>Gemütlicher Ausklang der Woche</li>
+            </ul>
+            <div style="margin-top: 1rem; border-radius: 8px; overflow: hidden; height: 180px;">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/732e42f2-68dd-4611-bcd8-ca3763d8f8f5.png" alt="Gemeinsames Abendessen Hafen" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+        <div class="col">
+            <h3 style="color: #f87171;">Freitag, 03.07.2026</h3>
+            <p><strong>Rückgabe & Heimreise</strong></p>
+            <ul>
+                <li><strong>Morgens:</strong> Rückfahrt nach Flensburg</li>
+                <li>Tanken & Müll entsorgen</li>
+                <li>Schiff aufklaren</li>
+                <li><strong>16:00 Uhr: Schiffsabgabe</strong></li>
+                <li>Pünktlich am Steg</li>
+                <li>Check-out & Verabschiedung</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Einkaufsliste -->
+<section class="slide compact">
+    <h2>Einkaufsliste (Vorschlag)</h2>
+    <div class="three-col">
+        <div class="col">
+            <h3>Obst & Gemüse</h3>
+            <ul class="tight">
+                <li>Äpfel, Bananen, Obst</li>
+                <li>Gurke, Tomaten, Paprika</li>
+                <li>Kartoffeln, Zwiebeln, Knoblauch</li>
+                <li>Salat (Eisberg), Zucchini</li>
+                <li>Kräuter (Basilikum, Schnittlauch)</li>
+            </ul>
+            <h3>Kühltheke / Fleisch</h3>
+            <ul class="tight">
+                <li>Butter/Margarine, Eier</li>
+                <li>Käse (Scheiben & Stück), Mozzarella</li>
+                <li>Wurst/Aufschnitt, Schinken, Speck</li>
+                <li>Joghurt, Milch, Sahne</li>
+                <li>Würstchen / Grillfleisch</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Getränke</h3>
+            <ul class="tight">
+                <li>Wasser (Medium/Spritzig)</li>
+                <li>Kaffee & Wasser zum Kochen</li>
+                <li>Bier, Wein (Rot/Weiß)</li>
+                <li>Cola, Fanta, Säfte (O-Saft)</li>
+                <li>Rum (Botucal), Veterano</li>
+            </ul>
+            <h3>Vorrat & Backwaren</h3>
+            <ul class="tight">
+                <li>Brot, Aufbackbrötchen</li>
+                <li>Nudeln, Reis, Mehl</li>
+                <li>Müsli, Marmelade, Nutella</li>
+                <li>Gewürze (Salz, Pfeffer, Curry)</li>
+                <li>Öl, Essig, Senf, Ketchup</li>
+                <li>Dosentomaten, Thunfisch</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Non-Food</h3>
+            <ul class="tight">
+                <li>Toilettenpapier, Küchenrolle</li>
+                <li>Spülmittel, Schwamm/Lappen</li>
+                <li>Müllbeutel, Filtertüten</li>
+                <li>Handseife</li>
+            </ul>
+            <h3>Snacks</h3>
+            <ul class="tight">
+                <li>Chips, Nüsse, Salzstangen</li>
+                <li>Schokolade, Kekse, Kuchen</li>
+                <li>Weingummi</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Packliste & Gepäck -->
+<section class="slide">
+    <h2>Packliste & Gepäck</h2>
+    <div class="two-col">
+        <div class="col">
+            <div class="alert-box">
+                <p><strong>WICHTIG:</strong> Begrenzter Platz in der Kabine!</p>
+                <p>➔ <strong>Nur weiche Reisetaschen</strong> (faltbar)</p>
+                <p>➔ <strong>Keine Hartschalenkoffer!</strong></p>
+            </div>
+            
+            <h3>Allgemeine Kleidung</h3>
+            <ul class="tight">
+                <li><strong>Regenjacke</strong> & ggf. Regenhose (Wind & Wetter!)</li>
+                <li><strong>Zwiebelprinzip:</strong> Mehrere Schichten</li>
+                <li>Warmer Pulli / Fleece (Abends oft kühl)</li>
+                <li><strong>Hosen:</strong> Kurz & Lang</li>
+                <li>T-Shirts & ausreichend Wechselwäsche</li>
+                <li><i>Empfohlen:</i> <strong>Badesachen</strong> (evtl.)</li>
+            </ul>
+
+            <h3>Schuhe</h3>
+            <ul class="tight">
+                <li><strong>Sportschuhe:</strong> Rutschfest & helle Sohle</li>
+                <li><strong>Wechselschuhe:</strong> Ein Paar für Landgänge</li>
+                <li><i>Verboten:</i> High Heels (Verletzungsgefahr!)</li>
+                <li>Badelatschen für Sanitäranlagen</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Schlafen & Persönliches</h3>
+            <ul class="tight">
+                <li><strong>Dokumente:</strong> Personalausweis (Wichtig!)</li>
+                <li><strong>Technik:</strong> Handyladekabel (230V an Bord)</li>
+                <li><strong>Schlafen:</strong> Schlafsack, Bettlaken, kl. Kopfkissen</li>
+                <li><strong>Hygiene:</strong> Kulturbeutel (zum Aufhängen)</li>
+                <li>Handtücher (nicht an Bord vorhanden)</li>
+                <li><strong>Geschirrtücher</strong> (pro Boot mitbringen)</li>
+                <li>Persönliche Medikamente</li>
+            </ul>
+            <h3>Sonnenschutz (Essenziell!)</h3>
+            <ul class="tight">
+                <li>Sonnencreme (hoher LSF)</li>
+                <li>Sonnenbrille <strong>mit Brillenband</strong></li>
+                <li>Sonnenhut oder Cap</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: Highlights -->
+<section class="slide">
+    <h2>Highlights</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Teamgeist</h3>
+            <p>Gemeinsames Abenteuer auf dem Wasser</p>
+        </div>
+        <div class="card">
+            <h3>Natur & Ostsee</h3>
+            <p>Unvergessliche Tage an der Küste</p>
+        </div>
+        <div class="card">
+            <h3>Gemeinschaft</h3>
+            <p>Grillen, Salate und Erlebnisse</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: End -->
+<section class="slide title-slide dark-bg">
+    <h2>Vielen Dank!</h2>
+    <p class="subtitle">Fragen?</p>
+    <p class="meta">Wir freuen uns auf einen tollen Segeltörn!</p>
+</section>
+
+</body>
+</html>
